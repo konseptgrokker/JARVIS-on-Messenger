@@ -35,11 +35,12 @@ def process(input, entities):
         output['output'] = TextTemplate(response).get_message()
         output['success'] = True
     except:
-        error_message = 'I couldn\'t perform that action.'
-        error_message += '\nPlease ask me something else, like:'
-        error_message += '\n  - shorten google.com'
-        error_message += '\n  - give me a short version of bing.com'
-        error_message += '\n  - expand http://goo.gl/7aqe'
+        error_message = (
+            'I couldn\'t perform that action.'
+            '\nPlease ask me something else, like:'
+            '\n  - shorten google.com'
+            '\n  - give me a short version of bing.com'
+            '\n  - expand http://goo.gl/7aqe')
         output['error_msg'] = TextTemplate(error_message).get_message()
         output['success'] = False
     return output

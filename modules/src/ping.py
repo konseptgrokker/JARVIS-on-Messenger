@@ -1,4 +1,4 @@
-from urlparse import urlparse
+    from urlparse import urlparse
 
 import requests
 
@@ -43,11 +43,12 @@ def process(input, entities):
         output['output'] = template.get_message()
         output['success'] = True
     except:
-        error_message = 'There seems to be a problem looking up that domain.'
-        error_message += '\nPlease ask me something else, like:'
-        error_message += '\n - is google.com up'
-        error_message += '\n - google.com status'
-        error_message += '\n - ping google.com'
+        error_message = (
+            'There seems to be a problem looking up that domain.'
+            '\nPlease ask me something else, like:'
+            '\n - is google.com up'
+            '\n - google.com status'
+            '\n - ping google.com')
         output['error_msg'] = TextTemplate(error_message).get_message()
         output['success'] = False
     return output

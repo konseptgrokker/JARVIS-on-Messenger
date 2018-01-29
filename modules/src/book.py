@@ -41,11 +41,12 @@ def process(input, entities):
         output['output'] = template.get_message()
         output['success'] = True
     except:
-        error_message = 'I couldn\'t find any book matching your query.'
-        error_message += '\nPlease ask me something else, like:'
-        error_message += '\n  - book timeline'
-        error_message += '\n  - harry potter book plot'
-        error_message += '\n  - little women book rating'
+        error_message = (
+            'I couldn\'t find any book matching your query.'
+            '\nPlease ask me something else, like:'
+            '\n  - book timeline'
+            '\n  - harry potter book plot'
+            '\n  - little women book rating')
         output['error_msg'] = TextTemplate(error_message).get_message()
         output['success'] = False
     return output

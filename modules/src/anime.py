@@ -1,4 +1,4 @@
-import requests
+    import requests
 import requests_cache
 
 from templates.button import *
@@ -35,11 +35,12 @@ def process(input, entities):
         output['output'] = template.get_message()
         output['success'] = True
     except:
-        error_message = 'I couldn\'t find any anime matching your query.'
-        error_message += '\nPlease ask me something else, like:'
-        error_message += '\n  - Death Note anime'
-        error_message += '\n  - Dragon ball super anime status'
-        error_message += '\n  - What is the anime rating of One Punch Man?'
+        error_message = (
+            'I couldn\'t find any anime matching your query.'
+            '\nPlease ask me something else, like:'
+            '\n  - Death Note anime'
+            '\n  - Dragon ball super anime status'
+            '\n  - What is the anime rating of One Punch Man?')
         output['error_msg'] = TextTemplate(error_message).get_message()
         output['success'] = False
     return output

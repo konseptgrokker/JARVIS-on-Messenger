@@ -35,11 +35,12 @@ def process(input, entities):
         output['output'] = template.get_message()
         output['success'] = True
     except:
-        error_message = 'I couldn\'t find any videos matching your query.'
-        error_message += '\nPlease ask me something else, like:'
-        error_message += '\n  - sia videos'
-        error_message += '\n  - videos by eminem'
-        error_message += '\n  - video coldplay'
+        error_message = (
+            'I couldn\'t find any videos matching your query.'
+            '\nPlease ask me something else, like:'
+            '\n  - sia videos'
+            '\n  - videos by eminem'
+            '\n  - video coldplay')
         output['error_msg'] = TextTemplate(error_message).get_message()
         output['success'] = False
     return output

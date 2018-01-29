@@ -48,11 +48,12 @@ def process(input, entities):
         output['output'] = template.get_message()
         output['success'] = True
     except:
-        error_message = 'I couldn\'t find any wikipedia results matching your query.'
-        error_message += '\nPlease ask me something else, like:'
-        error_message += '\n  - wikipedia barack'
-        error_message += '\n  - html wiki'
-        error_message += '\n  - who is sachin tendulkar'
+        error_message = (
+            'I couldn\'t find any wikipedia results matching your query.'
+            '\nPlease ask me something else, like:'
+            '\n  - wikipedia barack'
+            '\n  - html wiki'
+            '\n  - who is sachin tendulkar')
         output['error_msg'] = TextTemplate(error_message).get_message()
         output['success'] = False
     return output

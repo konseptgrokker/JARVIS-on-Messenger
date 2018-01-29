@@ -60,11 +60,12 @@ def process(input, entities):
         output['output'] = template.get_message()
         output['success'] = True
     except:
-        error_message = 'I couldn\'t find that movie.'
-        error_message += '\nPlease ask me something else, like:'
-        error_message += '\n  - batman movie'
-        error_message += '\n  - iron man 2 movie plot'
-        error_message += '\n  - What is the rating of happyness movie?'
+        error_message = (
+            'I couldn\'t find that movie.'
+            '\nPlease ask me something else, like:'
+            '\n  - batman movie'
+            '\n  - iron man 2 movie plot'
+            '\n  - What is the rating of happyness movie?')
         output['error_msg'] = TextTemplate(error_message).get_message()
         output['success'] = False
     return output
